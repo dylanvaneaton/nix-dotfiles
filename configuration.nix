@@ -46,6 +46,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  virtualisation.docker.enable = true;
+
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -85,6 +87,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       #  thunderbird
