@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./packages.nix
     ];
 
   # Bootloader.
@@ -99,23 +100,6 @@
       eval "$(direnv hook bash)"
     '';
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    pkgs.discord
-    pkgs.ghostty
-    pkgs.starship
-    gnomeExtensions.dash-to-dock
-    gnome-tweaks
-    vscode
-    pkgs.devenv
-    pkgs.direnv
-    pkgs.openssl
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
