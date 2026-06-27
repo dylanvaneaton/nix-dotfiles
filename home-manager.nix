@@ -47,14 +47,7 @@
       windowManager.command = "gnome-shell";
     };
 
-    # This value determines the Home Manager release that your configuration is
-    # compatible with. This helps avoid breakage when a new Home Manager release
-    # introduces backwards incompatiblehanges.
-    #
-    # You should not change this value, even if you update Home Manager. If you do
-    # want to update the value, then make sure to first check the Home Manager
-    # release notes.
-    home.stateVersion = "26.05"; # Please read the comment before changing.
+    home.stateVersion = "26.05";
   };
 
   home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash-put";
