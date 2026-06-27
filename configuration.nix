@@ -1,9 +1,13 @@
 {
   imports = [
-    # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
     ./system-packages.nix
     ./home-manager.nix
+  ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
   ];
 
   # Bootloader.

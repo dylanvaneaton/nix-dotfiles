@@ -8,8 +8,6 @@ in
     (import "${home-manager}/nixos")
   ];
 
-  home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash-put";
-
   home-manager.users.psparks = { pkgs, ... }: {
     nixpkgs.config.allowUnfree = true;
 
@@ -42,7 +40,17 @@ in
         user.email = "psparks1225@gmail.com";
       };
     };
-    # programs.bash.enable = true;
+
+    dconf.settings = {
+      "org/gnome/desktop/sound" = {
+        event-sounds = false;
+      };
+    };
+
+    xsession = {
+      enable = true;
+      windowManager.command = "gnome-shell";
+    };
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
@@ -53,4 +61,6 @@ in
     # release notes.
     home.stateVersion = "26.05"; # Please read the comment before changing.
   };
+
+  home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash-put";
 }
