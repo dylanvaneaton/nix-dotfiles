@@ -1,19 +1,12 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
+  home-manager = fetchTarball "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
 in
 {
   imports = [
     (import "${home-manager}/nixos")
   ];
 
-  home-manager.users.psparks = { pkgs, ... }: {
+  home-manager.users.psparks = { ... }: {
     # home.packages = [
     #   pkgs.atool
     #   pkgs.httpie

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -17,6 +17,7 @@
     discord
     spotify
     devenv
+    nixd
   ];
 
   programs.firefox.enable = true;
