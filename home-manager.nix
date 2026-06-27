@@ -1,12 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
-let
-  home-manager = fetchTarball "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
-in
 {
-  imports = [
-    (import "${home-manager}/nixos")
-  ];
+  imports = [ inputs.home-manager.nixosModules.default ];
 
   home-manager.users.psparks = { pkgs, ... }: {
     nixpkgs.config.allowUnfree = true;
