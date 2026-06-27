@@ -2,7 +2,7 @@
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
-    ./packages.nix
+    ./system-packages.nix
     ./home-manager.nix
   ];
 
@@ -89,12 +89,6 @@
       "wheel"
       "docker"
     ];
-  };
-
-  programs.bash = {
-    interactiveShellInit = ''
-      eval "$(starship init bash)"
-    '';
   };
 
   nix.settings.trusted-users = [

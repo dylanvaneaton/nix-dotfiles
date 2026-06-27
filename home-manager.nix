@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 let
   home-manager = fetchTarball "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
 in
@@ -6,11 +8,40 @@ in
     (import "${home-manager}/nixos")
   ];
 
-  home-manager.users.psparks = { ... }: {
-    # home.packages = [
-    #   pkgs.atool
-    #   pkgs.httpie
-    # ];
+  home-manager.backupCommand = "${pkgs.trash-cli}/bin/trash-put";
+
+  home-manager.users.psparks = { pkgs, ... }: {
+    nixpkgs.config.allowUnfree = true;
+
+    home.packages = with pkgs; [
+      gnomeExtensions.dash-to-dock
+      gnome-tweaks
+      trash-cli
+      vim
+      ghostty
+      starship
+      vscode
+      nixfmt
+      discord
+      spotify
+      devenv
+      nixd
+    ];
+
+    programs.bash = {
+      enable = true;
+      initExtra = ''
+        eval "$(starship init bash)"
+      '';
+    };
+
+    programs.git = {
+      enable = true;
+      settings = {
+        user.name = "psparks";
+        user.email = "psparks1225@gmail.com";
+      };
+    };
     # programs.bash.enable = true;
 
     # This value determines the Home Manager release that your configuration is
