@@ -4,18 +4,19 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.dash-to-dock
+    gnome-tweaks
     vim
     wget
     git
+    openssl
+    ghostty
+    starship
     vscode
-    gnome-tweaks
-    gnomeExtensions.dash-to-dock
-    pkgs.discord
-    pkgs.ghostty
-    pkgs.starship
-    pkgs.devenv
-    pkgs.openssl
-    pkgs.nixfmt
+    nixfmt
+    discord
+    spotify
+    devenv
   ];
 
   programs.firefox.enable = true;
