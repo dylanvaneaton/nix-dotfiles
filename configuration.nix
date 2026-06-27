@@ -94,18 +94,16 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   programs.bash = {
     interactiveShellInit = ''
       eval "$(starship init bash)"
-      eval "$(direnv hook bash)"
     '';
   };
+
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

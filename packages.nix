@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -12,8 +14,10 @@
     pkgs.ghostty
     pkgs.starship
     pkgs.devenv
-    pkgs.direnv
     pkgs.openssl
     pkgs.nixfmt
   ];
+
+  programs.firefox.enable = true;
+  programs.direnv.enable = true;
 }
