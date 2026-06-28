@@ -19,6 +19,7 @@
       spotify
       devenv
       nixd
+      dbeaver-bin
     ];
 
     programs.bash = {
