@@ -63,6 +63,8 @@
     '';
   };
 
+  virtualisation.docker.enable = true;
+
   users.users."psparks" = {
     isNormalUser = true;
     description = "psparks";

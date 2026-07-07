@@ -20,6 +20,10 @@
       devenv
       nixd
       dbeaver-bin
+      nodejs
+      pnpm
+      bun
+      bruno
     ];
 
     programs.bash = {
