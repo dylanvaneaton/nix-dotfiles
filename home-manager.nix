@@ -24,6 +24,10 @@
       pnpm
       bun
       bruno
+      obsidian
+      imagemagick
+      dig
+      obs-studio
     ];
 
     programs.bash = {
