@@ -3,7 +3,7 @@
 {
   imports = [ inputs.home-manager.nixosModules.default ];
 
-  home-manager.users.psparks = { pkgs, ... }: {
+  home-manager.users.dylan = { pkgs, ... }: {
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
@@ -40,8 +40,8 @@
     programs.git = {
       enable = true;
       settings = {
-        user.name = "psparks";
-        user.email = "psparks1225@gmail.com";
+        user.name = "dylan";
+        user.email = "dylanvaneaton@gmail.com";
       };
     };
 

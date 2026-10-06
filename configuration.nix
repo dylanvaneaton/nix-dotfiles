@@ -16,7 +16,7 @@
   };
 
   networking = {
-    hostName = "paul-nixos";
+    hostName = "rogtop";
     networkmanager.enable = true;
   };
 
@@ -65,9 +65,9 @@
 
   virtualisation.docker.enable = true;
 
-  users.users."psparks" = {
+  users.users."dylan" = {
     isNormalUser = true;
-    description = "psparks";
+    description = "dylan";
     extraGroups = [
       "networkmanager"
       "wheel"
